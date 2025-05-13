@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="19e60292-6f35-445a-9140-87e08f68aaf1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="140"/>
+	<queryString language="SQL">
+		<![CDATA[select * from CarteDeRemise]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="Typecart" class="java.lang.String"/>
+	<field name="Prc" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="173" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="461" height="140" uuid="caac6327-b4db-4100-8e9f-c2b1e16d5b35"/>
+				<imageExpression><![CDATA["C:\\Project\\ONCF\\png-clipart-rail-transport-scandi-maroc-train-oncf-logo-train-text-orange-removebg-preview.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="439" y="0" width="265" height="112" uuid="b62b10df-0602-44a2-9772-3bf12218e307"/>
+				<imageExpression><![CDATA["C:\\Project\\ONCF\\ONCF-01.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="0" width="555" height="63" uuid="1964911b-cc36-4e34-b4af-1a6c6a2b8cd5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="48" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Caret de Remise]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="456" y="84" width="100" height="20" uuid="59212bbd-4d01-4153-9898-08c4aa340732"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="166" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="118" width="253" height="48" backcolor="#76C4CB" uuid="76db5c2a-6cea-4b1b-8d13-86c47bed0497"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Percentage]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="253" y="118" width="302" height="48" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="932c11bb-ba12-4d5f-a352-a4f82cf7bfa5"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Prc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="81" width="301" height="37" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="123b0f54-30f2-4c3a-a964-6132457cd0d5"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="43" width="302" height="38" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="02754479-7923-499b-a522-cf83b89befc1"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Typecart}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="81" width="253" height="37" backcolor="#76C4CB" uuid="35989edd-5043-43d6-89c4-4bc241f33dc0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="43" width="252" height="38" backcolor="#76C4CB" uuid="3c5dcefc-b320-4149-b04d-9f86435a9cfa"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Type]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="95" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="97" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="11" width="554" height="72" forecolor="#FF6600" backcolor="#000000" uuid="fc8a44be-50ee-4df8-bed1-07f7f567d67c"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ONCF (from French: Office National des Chemins de Fer; Arabic: المكتب الوطني للسكك الحديدية al-Maktab al-Waṭaniyy lis-Sikak al-Ḥadīdiyyah; Moroccan National Railways Office) is Morocco's national railway operator. ONCF is a state-owned company that is under the control of the Ministry of Equipment, Transport and Logistics and is responsible for all passenger and freight traffic on the national railway network. The company is also responsible for building and maintaining the rail infrastructure.[1]]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

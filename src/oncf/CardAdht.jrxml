@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="57ab246c-2a1f-467d-91fb-525f6c5eadec">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="s" class="java.lang.Object">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT 
+    adhérent.id, 
+    adhérent.NomAdh, 
+    adhérent.PrenomAdh,
+    CarteDeRemise.Typecart
+FROM 
+    adhérent
+INNER JOIN 
+    CarteDeRemise ON adhérent.RCT = CarteDeRemise.Typecart
+ WHERE  
+    CarteDeRemise.Typecart = $P{s};]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="NomAdh" class="java.lang.String"/>
+	<field name="PrenomAdh" class="java.lang.String"/>
+	<field name="Typecart" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="192" splitType="Stretch">
+			<image>
+				<reportElement x="438" y="0" width="265" height="112" uuid="8dd33573-0541-4b9a-b154-90a39c686bf6"/>
+				<imageExpression><![CDATA["C:\\Project\\ONCF\\ONCF-01.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="80" y="131" width="394" height="40" uuid="5b836875-f769-48d6-b297-3782b67dea0a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Adherent en Carte"+$P{s}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<image>
+				<reportElement x="-23" y="-220" width="461" height="140" uuid="3a7f63f5-f83d-426c-9b41-ee6e64bba291"/>
+				<imageExpression><![CDATA["C:\\Project\\ONCF\\png-clipart-rail-transport-scandi-maroc-train-oncf-logo-train-text-orange-removebg-preview.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="193" y="41" width="212" height="20" backcolor="#76C4CB" uuid="26211aa0-536e-41bc-8454-c555c39153fa"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="41" width="193" height="20" backcolor="#76C4CB" uuid="d486bc64-904b-437e-af72-f3c8555464f9"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="405" y="41" width="149" height="20" backcolor="#76C4CB" uuid="3ea8a8cc-21e1-4f6e-846e-870337e4226a"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prenom]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="193" height="20" uuid="38dbd881-1d36-41c9-9135-c1622d4c72f5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="194" y="0" width="212" height="20" uuid="a6776d8f-2c77-4fc3-9333-c6d0a094b7d5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NomAdh}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="406" y="0" width="149" height="20" uuid="769b2c92-2a08-4158-8a35-9561c206d196"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PrenomAdh}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="554" height="72" forecolor="#FF6600" backcolor="#000000" uuid="50f83bbe-8150-4c65-b499-2d7b6cf8a672"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ONCF (from French: Office National des Chemins de Fer; Arabic: المكتب الوطني للسكك الحديدية al-Maktab al-Waṭaniyy lis-Sikak al-Ḥadīdiyyah; Moroccan National Railways Office) is Morocco's national railway operator. ONCF is a state-owned company that is under the control of the Ministry of Equipment, Transport and Logistics and is responsible for all passenger and freight traffic on the national railway network. The company is also responsible for building and maintaining the rail infrastructure.[1]]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

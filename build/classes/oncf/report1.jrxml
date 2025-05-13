@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a6b1d52b-1ac2-4109-aeb4-09191a33520b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="1"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[Select * from Personnellee]]>
+	</queryString>
+	<field name="PersID" class="java.lang.Integer"/>
+	<field name="PersNom" class="java.lang.String"/>
+	<field name="PersPrenom" class="java.lang.String"/>
+	<field name="Username" class="java.lang.String"/>
+	<field name="Password" class="java.lang.String"/>
+	<field name="PersVille" class="java.lang.String"/>
+	<field name="PersAdress" class="java.lang.String"/>
+	<field name="PersTel" class="java.lang.String"/>
+	<field name="PersCin" class="java.lang.String"/>
+	<field name="Type" class="java.lang.String"/>
+	<field name="SecurtiQuestion" class="java.lang.String"/>
+	<field name="SecurtiAnwser" class="java.lang.String"/>
+	<group name="PersID">
+		<groupExpression><![CDATA[$F{PersID}]]></groupExpression>
+	</group>
+	<group name="PersNom">
+		<groupExpression><![CDATA[$F{PersNom}]]></groupExpression>
+	</group>
+	<group name="Username">
+		<groupExpression><![CDATA[$F{Username}]]></groupExpression>
+	</group>
+	<group name="PersPrenom">
+		<groupExpression><![CDATA[$F{PersPrenom}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="170" splitType="Stretch">
+			<image>
+				<reportElement x="613" y="14" width="265" height="112" uuid="73f48035-a05d-4b7c-b763-a2f784595132"/>
+				<imageExpression><![CDATA["C:\\Project\\ONCF\\ONCF-01.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="66" splitType="Stretch">
+			<staticText>
+				<reportElement x="273" y="0" width="308" height="63" uuid="57cf24dd-d599-4f67-a1f0-936075c3dc2e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="48" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Personnellee]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="690" y="43" width="100" height="20" uuid="a4043dc0-3987-42f5-a560-59eae025a7bc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="-1" y="22" width="28" height="20" backcolor="#76C4CB" uuid="bbdd5cd3-7cf8-4a9f-9b91-5e788a7a161e"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="27" y="22" width="67" height="20" backcolor="#76C4CB" uuid="09d04871-a33f-49c0-b472-149282dbb7cb"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="94" y="22" width="58" height="20" backcolor="#76C4CB" uuid="505d7c1c-8c80-4f18-93ef-20dd0c5f31b8"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prenoù]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="272" y="22" width="60" height="20" backcolor="#76C4CB" uuid="f1145d6c-e3de-4e3f-ab8d-07b54c60f975"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ville]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="332" y="22" width="94" height="20" backcolor="#76C4CB" uuid="9c3211a4-a9b1-4e3a-bd4e-bcd884a06de9"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adresse]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="426" y="22" width="94" height="20" backcolor="#76C4CB" uuid="6e9cc129-7fde-4306-8769-3cfca0323add"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="520" y="22" width="80" height="20" backcolor="#76C4CB" uuid="3cfa5ca7-bf44-489d-ba0b-fccb216b0ab6"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="152" y="22" width="60" height="20" backcolor="#76C4CB" uuid="c46e1884-616b-4f8c-acff-57f66b1b8801"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Username]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="212" y="22" width="60" height="20" backcolor="#76C4CB" uuid="0560ec40-0019-4e59-974d-9f4c1c151893"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Password]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="600" y="22" width="42" height="20" backcolor="#76C4CB" uuid="ab889f4e-cf0e-4cb4-aaf3-ed470b0bdbc8"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="642" y="22" width="80" height="20" backcolor="#76C4CB" uuid="d8e29d4d-d379-4e60-8555-b034abb6d922"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qeustion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="722" y="22" width="79" height="20" backcolor="#76C4CB" uuid="343d51f1-c1fd-42c2-9b01-8fa3c805eaf9"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineColor="#66CCFF"/>
+					<topPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#66CCFF"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reponse]]></text>
+			</staticText>
+			<image>
+				<reportElement x="-16" y="-287" width="461" height="222" uuid="696312c2-bc96-4a06-9625-7de24f9f175e"/>
+				<imageExpression><![CDATA["C:\\Project\\ONCF\\png-clipart-rail-transport-scandi-maroc-train-oncf-logo-train-text-orange-removebg-preview.png"]]></imageExpression>
+			</image>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="94" y="0" width="58" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="710d35a4-515b-4c1e-b65a-a7230a126683"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PersPrenom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="0" width="60" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="06caa0ff-c84f-4d6f-917d-9755462787c3"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PersVille}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="332" y="0" width="94" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="7b2b8e31-af2c-4e1b-99a0-76b015174a3e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PersAdress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="426" y="0" width="94" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="c366efc7-ac9e-4854-9b56-ed28480eed92"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PersTel}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="520" y="0" width="80" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="e945fe82-2a46-4b8c-a4be-2c49591b3109"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PersCin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="0" width="60" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="c53b1f2e-4fda-4b54-a99b-0b1d315cbc2b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Username}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="212" y="0" width="60" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="d0da335f-26b0-4c3c-ab1c-5aefc6452b2f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Password}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="600" y="0" width="42" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="b03ff400-d4de-4983-88df-ae7bade4f98d"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Type}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="642" y="0" width="80" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="e95956f1-78b1-425e-85bd-086991d6dd34"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SecurtiQuestion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="722" y="0" width="79" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="3d1cca61-9617-4919-a4b0-409c9c975253"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SecurtiAnwser}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="0" width="67" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="2a795580-0cc9-4857-a00a-af9ae79a7818"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PersNom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-1" y="0" width="28" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="eaad33e6-a7ac-4464-8dfb-ce7a2974e670"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PersID}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="194" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="66" width="802" height="72" forecolor="#FF6600" backcolor="#000000" uuid="731f846a-226f-4e7f-86bb-795ad0affaa7"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ONCF (from French: Office National des Chemins de Fer; Arabic: المكتب الوطني للسكك الحديدية al-Maktab al-Waṭaniyy lis-Sikak al-Ḥadīdiyyah; Moroccan National Railways Office) is Morocco's national railway operator. ONCF is a state-owned company that is under the control of the Ministry of Equipment, Transport and Logistics and is responsible for all passenger and freight traffic on the national railway network. The company is also responsible for building and maintaining the rail infrastructure.[1]]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

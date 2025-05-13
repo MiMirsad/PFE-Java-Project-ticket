@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="555" pageHeight="381" orientation="Landscape" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Empty" uuid="f7debe06-fa88-475f-b148-2965a92dc887">
+	<property name="ireport.zoom" value="1.1000000000000003"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="TopN" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[DECLARE @TopN INT;
+SET @TopN = $P{TopN}; 
+
+SELECT TOP (@TopN) * FROM voyage
+ORDER BY VoyageID DESC;
+]]>
+	</queryString>
+	<field name="VoyageID" class="java.lang.Integer"/>
+	<field name="Mappigid" class="java.lang.String"/>
+	<field name="TrainN" class="java.lang.String"/>
+	<field name="TrainMarque" class="java.lang.String"/>
+	<field name="GareDepart" class="java.lang.String"/>
+	<field name="DateDepart" class="java.lang.String"/>
+	<field name="GareArrive" class="java.lang.String"/>
+	<field name="dateArrive" class="java.lang.String"/>
+	<field name="Vclass" class="java.lang.String"/>
+	<field name="Vplace" class="java.lang.String"/>
+	<field name="prix" class="java.lang.String"/>
+	<field name="fktrain" class="java.lang.Integer"/>
+	<field name="Vclass2" class="java.lang.String"/>
+	<group name="VoyageID">
+		<groupExpression><![CDATA[$F{VoyageID}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="231" splitType="Stretch">
+			<textField>
+				<reportElement x="28" y="154" width="109" height="20" uuid="4cbbe0eb-bc17-4272-9d57-31f6a8d5ac7f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DateDepart}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="511" y="10" width="44" height="20" uuid="707927bc-792a-45a5-988c-7eda49dd101f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VoyageID}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame">
+				<reportElement stretchType="RelativeToBandHeight" x="339" y="45" width="213" height="100" uuid="bc983eaa-cb11-4839-aa35-18a9efaac1c9"/>
+				<imageExpression><![CDATA["C:\\Project\\ONCF\\png-clipart-rail-transport-scandi-maroc-train-oncf-logo-train-text-orange-removebg-preview.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="484" y="174" width="71" height="20" uuid="1ab9edac-a0b4-4b39-8e5a-d52f0481ccf9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prix}+"DH"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="429" y="208" width="100" height="20" uuid="bcfcedff-e5ae-4709-833d-8df74baf7fb5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="492" y="79" width="74" height="20" uuid="b6443e39-e504-43db-ae95-147cf1f6fbb7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Vclass2} != null) ? $F{Vclass2} : ""]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="16" y="10" width="100" height="20" uuid="4c1dc22a-3b17-4229-8133-f2b35a53d843"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="208" width="108" height="20" uuid="3609a9cd-d746-4a86-a93c-61bd31f77d1f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GareDepart}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="105" width="37" height="20" uuid="50bd6e0f-8476-478c-bdf6-a194c7e016f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TrainN}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame">
+				<reportElement x="331" y="145" width="84" height="50" uuid="91f95f5e-0865-44bb-b8e9-9cb1cfaeaed5"/>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+    new com.google.zxing.qrcode.QRCodeWriter().encode(
+        $F{Vplace},
+        com.google.zxing.BarcodeFormat.QR_CODE, 300, 300
+    )
+)]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="29" width="555" height="1" uuid="44a5d455-8f78-4e03-af3c-7185ed89ec52"/>
+			</line>
+			<line>
+				<reportElement x="0" y="194" width="555" height="1" uuid="c461d5ea-6371-4b9b-b6bb-1bec7c470260"/>
+			</line>
+			<staticText>
+				<reportElement x="447" y="174" width="37" height="20" uuid="c052cc46-cc34-4bce-b707-245a22d96645"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prix ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="429" y="79" width="63" height="20" uuid="37ba5313-9fcd-4399-9889-63f73d4d8bf9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Vclass}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="45" width="109" height="20" uuid="36fd8a09-96ba-4bc0-a7c0-5e344c54a81b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dateArrive}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="492" y="79" width="76" height="20" isRemoveLineWhenBlank="true" uuid="3002942c-25bb-433e-93ad-0cb77feb63c2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{Vplace} != null) ? $F{Vplace} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="105" width="46" height="20" uuid="8aac1bc4-4b5b-4883-b1ab-ecdc366c6ee6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TrainMarque}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="154" width="93" height="20" uuid="a4bac106-0485-496a-b01c-c97c230c9199"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GareArrive}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="45" width="108" height="20" uuid="85140dca-11c0-450f-a8dc-6d9a380aa49d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GareDepart}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="529" y="208" width="37" height="20" uuid="49b406e9-ced8-4cdf-8320-2d452ec8438e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VoyageID}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement x="214" y="208" width="100" height="20" uuid="b5a6749b-0226-4303-ad07-ec821feeb050"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="411" y="9" width="100" height="20" uuid="44375578-b107-4bba-9f2e-e39595c85ba7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

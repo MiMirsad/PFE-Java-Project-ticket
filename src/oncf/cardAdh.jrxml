@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="253882e8-1077-4c5b-b1cd-5b464cd6d0cc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="s" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[SELECT adhérent.id, adhérent.NomAdh, adhérent.PrenomAdh
+FROM adhérent
+INNER JOIN CarteDeRemise ON adhérent.RCT = CarteDeRemise.id
+WHERE CarteDeRemise.Typecart = $P{s}
+]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="NomAdh" class="java.lang.String"/>
+	<field name="PrenomAdh" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="44" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="113" y="41" width="100" height="20" uuid="56826996-a20f-4310-8e65-d6dde0c5158a"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#66FFFF"/>
+					<topPen lineWidth="1.0" lineColor="#66FFFF"/>
+					<leftPen lineWidth="1.0" lineColor="#66FFFF"/>
+					<bottomPen lineWidth="1.0" lineColor="#66FFFF"/>
+					<rightPen lineWidth="1.0" lineColor="#66FFFF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PrenomAdh]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="213" y="41" width="100" height="20" uuid="64467715-01bb-4d1d-8512-def0268b45dd"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#66FFFF"/>
+					<topPen lineWidth="1.0" lineColor="#66FFFF"/>
+					<leftPen lineWidth="1.0" lineColor="#66FFFF"/>
+					<bottomPen lineWidth="1.0" lineColor="#66FFFF"/>
+					<rightPen lineWidth="1.0" lineColor="#66FFFF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NomAdh]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="41" width="100" height="20" backcolor="#00FFFF" uuid="39bbe4f9-9e4b-4be7-9f17-b0591850eb2f"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#66FFFF"/>
+					<topPen lineWidth="1.0" lineColor="#66FFFF"/>
+					<leftPen lineWidth="1.0" lineColor="#66FFFF"/>
+					<bottomPen lineWidth="1.0" lineColor="#66FFFF"/>
+					<rightPen lineWidth="1.0" lineColor="#66FFFF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[id]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="113" y="0" width="100" height="20" uuid="3c4457ba-d1ca-4577-b54b-966469b88ad5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PrenomAdh}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="213" y="0" width="100" height="20" uuid="34123318-7358-4c94-91be-545c366c8770"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NomAdh}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="313" y="0" width="100" height="20" uuid="69b514d8-d480-4daa-9ebd-a5a1c6041bae"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

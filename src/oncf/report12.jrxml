@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="525" pageHeight="243" orientation="Landscape" columnWidth="525" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="6a0942e7-0070-48d3-b0af-7f4740253c2b">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+    adh.id,
+    adh.NomAdh,
+    adh.PrenomAdh,
+    cdr.Typecart as RCT,
+    adh.RP,
+adh.Img
+FROM 
+    [Oncf].[dbo].[adhérent] adh
+JOIN 
+    [Oncf].[dbo].[CarteDeRemise] cdr ON adh.RCT = cdr.id]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="NomAdh" class="java.lang.String"/>
+	<field name="PrenomAdh" class="java.lang.String"/>
+	<field name="RCT" class="java.lang.String"/>
+	<field name="RP" class="java.lang.Integer"/>
+	<field name="Img" class="java.lang.String"/>
+	<group name="id">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+	</group>
+	<group name="NomAdh">
+		<groupExpression><![CDATA[$F{NomAdh}]]></groupExpression>
+	</group>
+	<group name="PrenomAdh">
+		<groupExpression><![CDATA[$F{PrenomAdh}]]></groupExpression>
+	</group>
+	<group name="RCT">
+		<groupExpression><![CDATA[$F{RCT}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="243" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="526" height="243" uuid="23de321a-3a6a-4040-89e8-fd1d60194a6e"/>
+				<imageExpression><![CDATA["C:\\Project\\ONCF\\src\\oncf\\boraq1.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="314" y="0" width="312" height="203" uuid="7b0e5940-f390-4cbc-8ce7-6f95e9ee5ef7"/>
+				<imageExpression><![CDATA["C:\\Project\\ONCF\\src\\oncf\\Ajouter un sous-titre.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="381" y="208" width="230" height="34" uuid="b5d2b377-f9e5-4c42-a17c-d52de1abe51b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Gill Sans MT" size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PrenomAdh} + " " + $F{NomAdh}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="6" y="208" width="221" height="29" uuid="cb0aa22a-eabb-46f0-b468-7d0793319715"/>
+				<textElement>
+					<font fontName="Gill Sans MT" size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["N° d'adherent : " + " " + $F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="201" y="0" width="161" height="47" uuid="306d6be4-aa4d-4c61-a0fb-ae329bdbbc3f"/>
+				<textElement>
+					<font fontName="Gill Sans MT" size="36" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RCT}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" isUsingCache="true">
+				<reportElement positionType="Float" x="250" y="188" width="76" height="49" uuid="6f7d27ee-28e2-4c5f-9a42-eb20a0134e65"/>
+				<imageExpression><![CDATA[ com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+     new com.google.zxing.qrcode.QRCodeWriter().encode(
+         $F{PrenomAdh},
+         com.google.zxing.BarcodeFormat.QR_CODE, 3000, 3000))]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+				<reportElement x="47" y="60" width="154" height="100" uuid="741102cf-a474-4f7b-9284-a4676ed78e8f"/>
+				<imageExpression><![CDATA[$F{Img}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

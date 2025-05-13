@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="79e6a36e-d2c3-4e7a-9b2c-0936fa8d9484">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from Trains]]>
+	</queryString>
+	<field name="TrainNumber" class="java.lang.Integer"/>
+	<field name="TrainMarque" class="java.lang.String"/>
+	<field name="TrainType" class="java.lang.String"/>
+	<field name="TrainplacesNum2cls" class="java.lang.Integer"/>
+	<field name="TrainplacesNum1cls" class="java.lang.Integer"/>
+	<field name="TrainSpeed" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="92" height="20" uuid="21e2af47-e16f-461a-bd26-d6fd6de81d1f"/>
+				<text><![CDATA[TrainNumber]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="92" y="0" width="92" height="20" uuid="91da02ed-9b9b-48a4-a5f0-a0343cdbf2d0"/>
+				<text><![CDATA[TrainMarque]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="0" width="92" height="20" uuid="b6733381-394f-4358-a687-94aa2adcdf07"/>
+				<text><![CDATA[TrainType]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="92" height="20" uuid="394aec45-0673-4ddf-bcea-388b681aa261"/>
+				<text><![CDATA[TrainplacesNum2cls]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="368" y="0" width="92" height="20" uuid="8f9654dc-f8a8-452c-9530-d0ce58d39f72"/>
+				<text><![CDATA[TrainplacesNum1cls]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="0" width="92" height="20" uuid="19e5e318-8a55-4633-af5b-04a0de3ded62"/>
+				<text><![CDATA[TrainSpeed]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="92" height="20" uuid="7a5a091b-5b0d-4567-a513-be887e6e4dc5"/>
+				<textFieldExpression><![CDATA[$F{TrainNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="92" y="0" width="92" height="20" uuid="e158c390-7600-40da-8593-2a30b64ecede"/>
+				<textFieldExpression><![CDATA[$F{TrainMarque}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="0" width="92" height="20" uuid="cad0f126-e7fd-4dd9-8f91-70517c7b0a22"/>
+				<textFieldExpression><![CDATA[$F{TrainType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="92" height="20" uuid="f8be9514-249e-4bed-9244-b561b4c1d195"/>
+				<textFieldExpression><![CDATA[$F{TrainplacesNum2cls}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="368" y="0" width="92" height="20" uuid="b298182c-d7d9-40b2-ae12-43f3c9b23a11"/>
+				<textFieldExpression><![CDATA[$F{TrainplacesNum1cls}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="0" width="92" height="20" uuid="8f778383-d861-4529-84ca-a45f93c50f3c"/>
+				<textFieldExpression><![CDATA[$F{TrainSpeed}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
